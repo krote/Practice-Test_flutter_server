@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package interview;
+
+import "google/protobuf/timestamp.proto";
+
+message Person {
+    string name = 1;
+    int32 id = 2;
+    string email = 3;
+}
+
+message InterviewLog {
+    google.protobuf.Timestamp interview_date = 1;
+    Person interviewer = 2;
+    Person interviewee = 3;
+    string interview_log = 4;
+}
+
+message InterviewResponse{
+    int32 status = 1;
+    string message = 2;
+}
+
+service Interview{
+    rpc AddInterviewLog (InterviewLog) returns (InterviewResponse);
+}

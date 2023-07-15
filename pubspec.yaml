@@ -8,6 +8,9 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+  grpc: ^3.0.2
+  interview_grpc_gen:
+    path: ../interview_grpc_gen
   # path: ^1.8.0
 
 dev_dependencies:
